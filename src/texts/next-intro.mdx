@@ -1,0 +1,19 @@
+## What does Next.js solve (in the first place)
+
+Next.js reads the React application and renders the HTML directly on the server.
+It also splits the JS code into multiple smaller bundles
+
+The generated pages can then be sent to the client along with their JS bundle and the data. On the client the page is already visible while the React app gets initialized and rehydrated with the data. Once loaded, React takes over.
+This makes for a much faster and therefore better user experience. And it also solves the SEO problem.
+Next.js provides the best of both worlds:
+
+- SEO optimized pages thanks to server side rendering and
+- and fluid user experience - thanks to React
+
+A Next.js Page contains: HTML - JS - JSON (all page data as props)
+
+Next.js provides:
+
+- CSR: Client side rendering
+- SSR: Server side rendering
+- SSG: Static site generation

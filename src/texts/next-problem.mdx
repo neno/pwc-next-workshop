@@ -1,0 +1,14 @@
+## The problems with Next.js
+
+Next.js renders content in 2 different places:
+
+1. on the server
+2. and on the client
+
+Next.js sends all data to the browser - the network payload is still big. This adds quiet a bit of overhead.
+
+The dual rendering context produces also a lot of confusion. Next.js files mix front-end code with code for fetching data from a server or file system.
+
+This may lead to errors, for example when trying to access the global window object and developers don't understand that their code is not only running in the browser but also on the server.
+
+React is just a library. It relies on the whole ecosystem and additional modules. Historically React hast been a client-side library. And many modules rely on client-side code.

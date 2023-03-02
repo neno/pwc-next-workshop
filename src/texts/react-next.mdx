@@ -1,0 +1,77 @@
+# What are the problems in React that Next.js is trying to solve
+
+## The problem with React (and other JS Frameworks)
+
+Like with all Javascript frameworks a React app is sent as a JS bundle from the server to the client. The browser then executes the Javascript and generates the app with all of its HTML pages.
+
+This enables rich user experiences in the browsers. But this client-side approach comes also with a bunch of tradeoffs:
+
+- Before the user can see or interact with the app the browser needs to download a lot of JS. And that takes time. But the longer the user needs to wait the worse the user experience gets
+- A client-side generated app ships with no content except for a blank HTML skeleton. This is bad and extremely limiting for SEO (Search Engine Optimization)
+
+## What does Next.js solve (in the first place)
+
+Next.js reads the React application and renders the HTML directly on the server.
+It also splits the JS code into multiple smaller bundles
+
+The generated pages can then be sent to the client along with their JS bundle and the data. On the client the page is already visible while the React app gets initialized and rehydrated with the data. Once loaded, React takes over.
+This makes for a much faster and therefore better user experience. And it also solves the SEO problem.
+Next.js provides the best of both worlds:
+
+- SEO optimized pages thanks to server side rendering and
+- and fluid user experience - thanks to React
+
+A Next.js Page contains: HTML - JS - JSON (all page data as props)
+
+Next.js provides:
+
+- CSR: Client side rendering
+- SSR: Server side rendering
+- SSG: Static site generation
+
+## The problems with Next.js
+
+Next.js renders content in 2 different places:
+
+1. on the server
+2. and on the client
+
+Next.js sends all data to the browser - the network payload is still big. This adds quiet a bit of overhead.
+
+The dual rendering context produces also a lot of confusion. Next.js files mix front-end code with code for fetching data from a server or file system.
+
+This may lead to errors, for example when trying to access the global window object and developers don't understand that their code is not only running in the browser but also on the server.
+
+React is just a library. It relies on the whole ecosystem and additional modules. Historically React hast been a client-side library. And many modules rely on client-side code.
+
+## The React & Next.js common solution
+
+Reat 18 brought a lot of improvements and new features which seem geared towards a specific use-case: rendering React on the server. In particular via a concept called "Server Components".
+
+Of coures it was already possible to generate a whole React app on the server with "React Server Side Rendering". So the goal was not to create and ship an entire app bundle. But to create single components that can be rendered on the server and then streamed to the client.
+
+And with the release of Next.js 13 we can see all these improvements come together. Next.js now uses Server Components by default.
+The idea is no longer to do all the data fetching in the page and then drill down the data but for each component to be responsible for fetching its own data.
+The drawback with ServerComponents is that they do not handle state. If you need state handling you need to declare a component with "use-client" as a ClientComponent.
+
+With this React and Next.js position themselves as a full-stack framework.
+
+It looks alot what PHP and Ruby on Rails have done in the past. But it does so with 2 main differences:
+
+1. **HTML streaming**: Next.js & React can stream HTML code to the client not only render it server-side
+2. **Rendering on the edge**: Next.js can render pages on the edge of the network. Rendering can be done not only on a centralized server but in a distributed network of servers
+
+![Identifying Server and Client components in Next.js 13](/public/server-client-components.png 'San Juan Mountains')
+
+## Server Component
+
+A component that is fetched and rendered **on the server**.
+
+## Client Component
+
+A component that is fetched and rendered **on the client**.
+
+Why is that important 🤔?
+
+User experience without Server Components:
+User needs to download all the Javascript needed to build the website and potentially also all the packages to format the content (eg: markdown, rich text, code highlighter, moment.js, etc.).

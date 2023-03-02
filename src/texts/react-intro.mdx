@@ -1,0 +1,8 @@
+## The problem with React (and other JS Frameworks)
+
+Like with all Javascript frameworks a React app is sent as a JS bundle from the server to the client. The browser then executes the Javascript and generates the app with all of its HTML pages.
+
+This enables rich user experiences in the browsers. But this client-side approach comes also with a bunch of tradeoffs:
+
+- Before the user can see or interact with the app the browser needs to download a lot of JS. And that takes time. But the longer the user needs to wait the worse the user experience gets
+- A client-side generated app ships with no content except for a blank HTML skeleton. This is bad and extremely limiting for SEO (Search Engine Optimization)

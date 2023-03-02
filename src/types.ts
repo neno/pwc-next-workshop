@@ -3,16 +3,38 @@ export type IMovieItem = Pick<IMovie, 'id' | 'title' | 'poster_path' | 'release_
 export interface IMovie {
   id: number;
   title: string;
+  tagline: string;
   poster_path: string;
   release_date: string;
   runtime: number;
   overview: string;
   genres: IGenre[];
+  budget: number;
+  revenue: number;
+  homepage: string;
+  imdb_id: string;
+  popularity: number;
+  vote_average: number;
+  vote_count: number;
+  spoken_languages: ILanguage[];
+}
+
+export interface ILanguage {
+  english_name: string;
+  iso_639_1: string;
+  name: string;
 }
 
 export interface IGenre {
   id: number;
   name: string;
+}
+
+export interface IApiMovieListResult {
+  page: number;
+  results: IMovieItem[];
+  total_pages: number;
+  total_results: number;
 }
 
 // const imagePath = "https://image.tmdb.org/t/p/original"

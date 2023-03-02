@@ -26,28 +26,7 @@ export default function RootLayout({
             <li className='mr-2'></li>
           </ul>
         </nav>
-        <main className='container mx-auto'>
-          {/* <nav>
-            <ul className='flex flex-wrap border-b border-gray-200'>
-              <li className='mr-2'>
-                <Link href='/' className='tab'>
-                  Popular
-                </Link>
-              </li>
-              <li className='mr-2'>
-                <Link href='/search' className='tab'>
-                  Search
-                </Link>
-              </li>
-              <li className='mr-2'>
-                <Link href='/favorites' className='tab'>
-                  My Favorites
-                </Link>
-              </li>
-            </ul>
-          </nav> */}
-          {children}
-        </main>
+        <main className='container mx-auto'>{children}</main>
       </body>
     </html>
   );

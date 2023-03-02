@@ -1,0 +1,18 @@
+## The React & Next.js common solution
+
+Reat 18 brought a lot of improvements and new features which seem geared towards a specific use-case: rendering React on the server. In particular via a concept called "Server Components".
+
+Of coures it was already possible to generate a whole React app on the server with "React Server Side Rendering". So the goal was not to create and ship an entire app bundle. But to create single components that can be rendered on the server and then streamed to the client.
+
+And with the release of Next.js 13 we can see all these improvements come together. Next.js now uses Server Components by default.
+The idea is no longer to do all the data fetching in the page and then drill down the data but for each component to be responsible for fetching its own data.
+The drawback with ServerComponents is that they do not handle state. If you need state handling you need to declare a component with "use-client" as a ClientComponent.
+
+With this React and Next.js position themselves as a full-stack framework.
+
+It looks alot what PHP and Ruby on Rails have done in the past. But it does so with 2 main differences:
+
+1. **HTML streaming**: Next.js & React can stream HTML code to the client not only render it server-side
+2. **Rendering on the edge**: Next.js can render pages on the edge of the network. Rendering can be done not only on a centralized server but in a distributed network of servers
+
+![Identifying Server and Client components in Next.js 13](/server-client-components.png 'San Juan Mountains')

@@ -11,7 +11,6 @@ export const NextImage: FC<ImageProps> = ({
   className,
   ...props
 }) => {
-  console.log('NextImage', src);
   const imgUrl = src ? `${imageBaseUrl}/${src}` : '/no-image.png';
   return (
     <Image

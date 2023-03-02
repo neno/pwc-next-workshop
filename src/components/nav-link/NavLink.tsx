@@ -16,9 +16,7 @@ export const NavLink: FC<NavLinkProps> = ({
   className = 'nav',
 }) => {
   const segment = useSelectedLayoutSegment();
-
   const active = href === `/${segment ?? ''}`;
-  console.log('active', href, `/${segment}`, segment, active);
 
   return (
     <Link href={href} className={active ? `${className} activenav` : className}>

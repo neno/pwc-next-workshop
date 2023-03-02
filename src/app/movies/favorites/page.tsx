@@ -1,3 +1,5 @@
-export default async function FavoriteMoviesPage() {
-  return <h1>Favorite Movies</h1>;
+import { FavoriteMovies } from '@/components/favorite-movies/FavoriteMovies';
+
+export default function FavoriteMoviesPage() {
+  return <FavoriteMovies />;
 }

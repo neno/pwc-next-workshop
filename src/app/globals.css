@@ -50,7 +50,7 @@ main a {
 
 section,
 .section {
-  @apply max-w-3xl mx-auto my-24;
+  @apply max-w-3xl my-24;
 }
 
 section > * {

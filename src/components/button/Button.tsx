@@ -4,7 +4,7 @@ import { FC, ReactNode } from 'react';
 
 interface IButtonProps {
   children: ReactNode;
-  mode?: 'primary' | 'secondary' | 'tertiary';
+  mode?: 'primary' | 'secondary' | 'tertiary' | 'danger';
   type?: 'button' | 'submit' | 'reset';
   path?: string;
   onClick?: () => void;
@@ -19,6 +19,7 @@ export const Button: FC<IButtonProps> = ({
 }) => {
   const styles = clsxm('inline-block relative px-4 py-2 font-medium', {
     'bg-primary text-white': mode === 'primary',
+    'bg-danger text-white': mode === 'danger',
   });
 
   if (path) {

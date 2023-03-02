@@ -7,7 +7,7 @@ interface GalleryProps {
 }
 export const Gallery: FC<GalleryProps> = ({ movies }) => (
   <div className='gallery'>
-    <ul className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-x-8 md:gap-y-16'>
+    <ul className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-8 my-0'>
       {movies?.map((movie) => (
         <li className='relative' key={movie.id}>
           <Card
